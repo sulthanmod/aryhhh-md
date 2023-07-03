@@ -44,11 +44,10 @@ Function({
 	let msg = `╭━━━〔 ${BOT_INFO.split(";")[0]} ⁩〕━━━┈⊷
 ┃✵╭──────────────
 ┃✵│ Owner : ${BOT_INFO.split(";")[1]}
-┃✵│ User : ${m.pushName}
+┃✵│ User : ${m.pushName.replace( /[\r\n]+/gm, "" )}
 ┃✵│ Plugins : ${commands.length}
 ┃✵│ Runtime : ${runtime(process.uptime())}
 ┃✵│ Mode : ${MODE}
-┃✵│ Host Name : heroku
 ┃✵│ Platform : ${os.platform()}
 ┃✵│ Ram : ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 ┃✵│ Version : ${VERSION}
@@ -67,35 +66,22 @@ Function({
 		msg += `╰─────────────┈⊷
 `
 	}
-	var img = await parsedUrl(BOT_INFO)
+	await message.send(msg);
+	/* var img = await parsedUrl(BOT_INFO)
 	if (img.length == 0) {
 		img = ['https://i.imgur.com/qJUBCYm.jpeg']
 	}
 	const image = img[Math.floor(Math.random() * img.length)]
 	const type = image.endsWith('mp4') ? 'video' : 'image'
 	const buttonMessage = {
-		[type]: {
-			url: image
-		},
+		[type]: { url: image },
 		caption: `${msg}`,
 		footer: `${BOT_INFO.split(";")[0] || ' '}`,
-		buttons: [{
-				buttonId: prefix + 'ping',
-				buttonText: {
-					displayText: 'Speed Test'
-				},
-				type: 1
-			},
-			{
-				buttonId: prefix + 'list',
-				buttonText: {
-					displayText: 'List Commands'
-				},
-				type: 1
-			}
-		]
+		buttons: [{buttonId: prefix + 'ping', buttonText: { displayText: 'Speed Test' }, type: 1},{ buttonId: prefix + 'list', buttonText: { displayText: 'List Commands' }, type: 1}]
 	}
 	await message.client.sendMessage(message.chat, buttonMessage)
+	*/
+	
 });
 
 const runtime = function(seconds) {
@@ -110,3 +96,5 @@ const runtime = function(seconds) {
 	var sDisplay = s > 0 ? s + (s == 1 ? " s" : " s") : "";
 	return dDisplay + hDisplay + mDisplay + sDisplay;
 }
+
+exports.runtime = runtime;
