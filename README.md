@@ -32,5 +32,10 @@ Hermit-md - Simple whatsapp Multi Device whatsapp bot.
 2. Now Deploy
     <br>
 <a href='https://hermit.adithyan.xyz/deploy-koyeb' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=koyeb&logoColor=white'/></a>  
+
+### DEPLOY TO RAILWAY
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/gFmGaV?referralCode=MaskSer)
+
 ***
+
 <a href="https://chat.whatsapp.com/Czc4zb42smmHIkso3Od0ir"><img alt="WhatsApp" src="https://img.shields.io/badge/-Whatsapp%20Group-blue?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
